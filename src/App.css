@@ -1,5 +1,5 @@
 body {
-  background-image: url("background.png");
+  background-image: url("hiq-location_malmo.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -14,11 +14,11 @@ body {
 }
 
 .most-used-word {
-  background-color: #d7f5ed;
+  background-color: #a3b6f1;
 }
 
 h1 {
-  color: #61b759;
+  color: #081107;
 }
 
 html,
@@ -29,7 +29,7 @@ body,
 }
 
 html {
-  background-color: #eef6f8;
+  background-color: rgb(136, 136, 133);
 }
 pre {
   white-space: pre-wrap;

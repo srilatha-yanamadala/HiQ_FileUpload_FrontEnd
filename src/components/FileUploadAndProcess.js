@@ -11,9 +11,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function FileUploadAndProcess() {
 
   //Initialize the required states
+
   const [file, setFile] = useState(null);
   const [text, setText] = useState("");
-  const [mostOccuredWord, setMostOccuredWord] = useState("");
+  const [mostUsedWord, setMostUsedWord] = useState("");
   const [frequency, setFrequency] = useState(null);
   const [loading, setLoading] = useState(false);
 
@@ -26,12 +27,11 @@ function FileUploadAndProcess() {
     setLoading(true)
     const fd = new FormData();
     fd.append('file', file, file.name);
-    Axios.post('https://localhost:6001/Home/ReadAndProcessFile', fd)
+    Axios.post('https://localhost:5001/Home/ReadAndProcessFile', fd)
       .then(res => {
         console.log(res);
         setText(res.data.text);
-        setMostOccuredWord(res.data.mostOccuredWord);
-      
+        setMostUsedWord(res.data.mostUsedWord);
         setFrequency(res.data.frequencies);
         setLoading(false)
       });
@@ -55,8 +55,8 @@ function FileUploadAndProcess() {
             <button className="input-group-text" type="submit">Upload</button>
           </div>
         </div>
-        {text ? (
-          <p className="most-used-word p-1">Your most used word is: { mostOccuredWord} <br /> It was used { frequency} times!</p>
+        {text ? (          
+          <p className="most-used-word p-2 align:center">The most used word in the given file is: {mostUsedWord} <br /> Frequency of usage is: { frequency}</p>
         ) : (
             <div></div>
           )}
@@ -68,7 +68,7 @@ function FileUploadAndProcess() {
                 ? <div className="d-flex justify-content-center">
                   <div className="spinner-border text-success" role="status"></div>
                 </div>
-                : 'Displaying text here...'}</p>
+                : ''}</p>
             )}
 
         </div>

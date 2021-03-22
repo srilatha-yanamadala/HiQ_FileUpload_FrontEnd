@@ -1,11 +1,17 @@
 ## Pre-requisites:
 
     Install VSCode or any other code editor
+
     Clone the repository in VSCode
+
     Install Node
+
     Install Axios
+
         npm install axios --save
+
     Install bootstrap
+
         npm install bootstrap --save
 
 ## To Run the application:
