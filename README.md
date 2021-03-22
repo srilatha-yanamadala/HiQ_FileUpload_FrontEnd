@@ -14,6 +14,13 @@
 
         npm install bootstrap --save
 
+    Make sure that the Backend API is up and running.
+
+    Also, in the FileUploadAndProcess.js file, the port number and URL should match the Backend API's URL and port number.
+
+    for eg: https://localhost:5001/Home/ReadAndProcessFile
+    
+
 ## To Run the application:
 
     npm start
